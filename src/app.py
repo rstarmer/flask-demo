@@ -5,6 +5,6 @@ from flask import Flask, jsonify
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/index.json')
-def return_json():
-    return jsonify(message="hello, world")
+@app.route('/api/')
+def hello_api():
+    return jsonify('Hello, World!')
