@@ -1,4 +1,7 @@
 Flask
-Flask-Admin
-Werkzeug
+Flask-RESTful
 gunicorn
+itsdangerous
+Jinja2
+peewee
+Werkzeug
