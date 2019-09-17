@@ -11,6 +11,8 @@ build-master:
     - docker push "$CI_REGISTRY_IMAGE"
   only:
     - master
+    variables:
+     - $DOCKER != null
   tags:
     - docker
 
@@ -27,5 +29,8 @@ build:
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
     - master
+  only:
+    variables:
+     - $DOCKER != null
   tags:
     - docker
