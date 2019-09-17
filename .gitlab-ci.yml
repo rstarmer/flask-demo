@@ -23,7 +23,7 @@ deploy:
   script:
   - echo "This is a deployment"
   artifacts:
-    path:
+    paths:
     - README.md
     expire_in: 1 day
 
