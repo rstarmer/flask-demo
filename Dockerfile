@@ -1,8 +1,9 @@
 FROM python:alpine
 
 COPY requirements.txt /
-RUN apk add git vim && pip install -r /requirements.txt &&  mkdir /src
+RUN apk add git vim && pip install -r /requirements.txt &&  mkdir -p /src/templates
 COPY * /src/
+COPY index.html /src/templates
 WORKDIR /src
 
 EXPOSE 80
