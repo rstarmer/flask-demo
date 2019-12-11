@@ -4,8 +4,9 @@ COPY requirements.txt /
 RUN apk add git vim
 RUN pip install -r /requirements.txt
 
-COPY src/ /src
-WORKDIR /
+MKDIR /src
+COPY * /src
+WORKDIR /src
 
 EXPOSE 80
 
