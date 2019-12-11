@@ -1,12 +1,10 @@
 FROM python:alpine
 
 COPY requirements.txt /
-RUN apk add git vim
-RUN pip install -r /requirements.txt
+RUN apk add git vim && pip install -r /requirements.txt &&  mkdir /src
+COPY * /src/
+WORKDIR /src
 
-COPY src/ /src
-WORKDIR /
+EXPOSE 80
 
-EXPOSE 8000
-
-CMD ["gunicorn","-w 4","-b 0.0.0.0:8000", "app:app"]
+CMD ["gunicorn","-w 4","-b 0.0.0.0:80", "app:app", "--log-file=-"]
